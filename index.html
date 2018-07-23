@@ -5,9 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script id='bookTemplate' type="text/x-handlebars-template">
+      <h1>{{title}}</h1>
+      <h3>{{author}}</h3>
+      <h4>{{isbn}}</h4>
+      <img src='{{image_url}}'>
+      <p>{{description}}</p>
+    </script>
 </head>
 <body>
     <h1>Hello World!!!!</h1>
-    
+    <main>
+        <section id='bookList'><h1>Book List</h1></section>
+        <section id='bookCount'><h1>Book Count</h1></section>
+        <section id='about'><h1>About Us</h1></section>
+    </main>
+    <script src="scripts/vendor/handlebars-v4.0.11.js"></script>
+    <script src="scripts/vendor/jquery-3.3.1.min.js"></script>
+    <script src="scripts/index.js"></script>
 </body>
 </html>
