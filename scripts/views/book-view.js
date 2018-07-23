@@ -3,17 +3,18 @@ var app=app||{};
 
 (function(module){
 
-  const bookview={};
+  const bookView={};
 
-  bookview.initIndexPage=function(){
+  bookView.initIndexPage=function(){
     app.showOnly(".book-view");
-    app.Book.all.forEach(x=>{
+    app.Book.all.forEach(book=>{
       $("#bookList").append(book.toHtml())
     });
-  }
+  };
 
+  module.bookView = bookView;
 })(app);
 
 $(function(){
-  app.Book.fetchAll(app.bookview.initIndexPage);
+  app.Book.fetchAll(app.bookView.initIndexPage);
 })
