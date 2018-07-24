@@ -2,6 +2,10 @@
 var app = app || {};
 
 (function(module){
+    function errorCallback(err) {
+        console.error(err);
+        app.errorView.initErrorPage(err);
+    }
     let Book = function (book) {
         this.title = book.title;
         this.author = book.author;
