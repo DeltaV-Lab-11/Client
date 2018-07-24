@@ -9,7 +9,7 @@ var app = app || {};
         devApiUrl:'http://localhost:3000'
     }
     
-    module.ENV.apiUrl = module.ENV.isProduction ? module.ENV.productionApiUrl: module.ENV.developmentApiUrl
+    module.ENV.apiUrl = module.ENV.isProduction ? module.ENV.productionApiUrl: module.ENV.devApiUrl
 
     module.showOnly = function(selected) {
         $("main > section").hide()
