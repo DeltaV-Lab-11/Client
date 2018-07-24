@@ -32,6 +32,12 @@ var app = app || {};
       .then(Book.loadAll)
       .then(callback)
       .catch(errorCallback);
+    }
 
+    Book.createBook = (book) => {
+        $.post(`${app.ENV.apiUrl}/api/v1/books/add`,book)
+            .then(()=>page('/'))
+            .catch(errorCallback);
+    }
     module.Book = Book
 })(app);
