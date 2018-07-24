@@ -6,11 +6,11 @@ var app = app || {};
     module.ENV = {
         isProduction:/^(?!localhost|127)/.test(window.location.hostname),
         productionApiUrl:'https://tr-et-booklist.herokuapp.com',
-        devApiUrl:'http://localhost:3000',
-        ENVIRONMENT = {
-            apiUrl: isProduction ? productionApiUrl: developmentApiUrl
-        }
+        devApiUrl:'http://localhost:3000'
     }
+    
+    module.ENV.apiUrl = module.ENV.isProduction ? module.ENV.productionApiUrl: module.ENV.developmentApiUrl
+
     module.showOnly = function(selected) {
         $("main > section").hide()
         $(selected).show()
