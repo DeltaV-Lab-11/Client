@@ -21,7 +21,13 @@ var app = app || {};
         console.log(Book.all)
     }
 
-    Book.fetchAll = (callback,errorCallback) =>
+    Book.fetchOne = (bookId,callback) =>{
+        $.get(`${app.ENV.apiUrl}/api/v1/books/${bookId}`)
+            .then(bookData => callback(new Book(bookData)))
+            .catch(errorCallback);
+    }
+
+    Book.fetchAll = (callback,errorCallback) => {
     $.get(`${app.ENV.apiUrl}/api/v1/books`)
       .then(Book.loadAll)
       .then(callback)
