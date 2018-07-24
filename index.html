@@ -15,6 +15,12 @@
     <script id="error-template" type="text/x-handlebars-template">
         <p>{{status}}: {{statusText}}</p>
     </script>
+    <script id="detail-template" type="text/x-handlebars-template">
+        <div>
+            <h1>{{title}}</h1>
+            <p>{{description}}</p>
+        </div>
+    </script>
 </head>
 <body>
     <h1>Hello World!!!!</h1>
@@ -22,9 +28,23 @@
         <section id='bookList'><h1>Book List</h1></section>
         <section id='bookCount'><h1>Book Count</h1></section>
         <section id='about'><h1>About Us</h1></section>
+        <section id='detail'><h1>Detail</h1></section>
+        <section id='form'>
+            <h1>Create a book!</h1>
+            <form id="add-form"> 
+                <input type="text" required name="title">
+                <input type="text" required name="author">
+                <input type="text" required name="image_url">
+                <textarea name="description" cols="50" rows="10"></textarea>
+                <button type="submit">Create Book</button>
+            </form>
+        </section>
     </main>
     <script src="scripts/vendor/handlebars-v4.0.11.js"></script>
     <script src="scripts/vendor/jquery-3.3.1.min.js"></script>
+    <script src="scripts/views/book-view.js"></script>
+    <script src="scripts/views/error-view.js"></script>
+    <script src="scripts/models/book.js"></script>
     <script src="scripts/index.js"></script>
 </body>
 </html>
