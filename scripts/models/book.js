@@ -39,7 +39,7 @@ var app = app || {};
     }
 
     Book.createBook = (book) => {
-        $.post(`${app.ENV.apiUrl}/api/v1/books/add`,book)
+        $.post(`${app.ENV.apiUrl}/api/v1/books/new`,book)
             .then(()=>page('/'))
             .catch(errorCallback);
     }
