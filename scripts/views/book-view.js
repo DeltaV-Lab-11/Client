@@ -7,9 +7,16 @@ var app=app||{};
 
   bookView.initIndexPage=function(){
     app.showOnly(".book-view");
+    $('#bookList').empty();
     app.Book.all.forEach(book=>{
       $("#bookList").append(book.toHtml())
     });
+  };
+
+  bookView.initDetailPage = function(book){
+    app.showOnly('.detail-view');
+    console.log(book);
+    $('#detail').empty().append(book.toHtml());
   };
 
   bookView.initAddForm=function(){
