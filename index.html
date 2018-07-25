@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>HelloWorldBooks</title>
+    <link rel="stylesheet" href="styles/base.css">
     <script id='bookTemplate' type="text/x-handlebars-template">
       <h1>{{title}}</h1>
       <h3>{{author}}</h3>
@@ -24,7 +25,8 @@
 </head>
 <body>
     <header>
-        <h1>Hello World!!!!</h1>
+        <h1>Hello World Books</h1>
+        <h3>Your onestop shop for book description</h3>
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
@@ -33,12 +35,21 @@
         </nav>
     </header>
     <main>
-        <section id='bookList'><h1>Book List</h1></section>
-        <section id='bookCount'><h1>Book Count</h1></section>
-        <section id='about'><h1>About Us</h1></section>
-        <section id='detail'><h1>Detail</h1></section>
-        <section id ='error-message' class="error-view"></section>
-        <section id='form'>
+        <div class="book-view">
+            <h1>Book List</h1>
+            <section id='bookList'></section>
+            <section id='bookCount'><h1>Book Count</h1></section>
+        </div>
+        <div class="about-view">
+            <section id='about'><h1>About Us</h1></section>
+        </div>
+        <div class="detail-view">
+            <section id='detail'><h1>Detail</h1></section>
+        </div>
+        <div class="error-view">
+            <section id ='error-message' class="error-view"></section>
+        </div>
+        <div id='form' class="form-view">
             <h1>Create a book!</h1>
             <form id="add-form"> 
                 <input type="text" required name="title">
@@ -47,7 +58,7 @@
                 <textarea name="description" cols="50" rows="10"></textarea>
                 <button type="submit">Create Book</button>
             </form>
-        </section>
+        </div>
     </main>
     <script src="scripts/vendor/handlebars-v4.0.11.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
