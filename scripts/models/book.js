@@ -18,7 +18,6 @@ var app = app || {};
     Book.all = [];
     const compareBy = (key) => (a, b) => a[key] < b[key] ? -1 : a[key] > b[key] ? 1 : 0;
     Book.loadAll = function(rows){
-        Book.all.length = [0];
         Book.all = rows.sort(compareBy('title')).map(book => new Book(book));
         console.log(Book.all)
     }
@@ -42,5 +41,14 @@ var app = app || {};
             .then(()=>page('/'))
             .catch(errorCallback);
     }
+
+    Book.updateBook = (book) => 
+    $.ajax({
+        method: 'put',
+        url: `${app.ENV.apiUrl}/api/v1/books/${book.bookId}`,
+        data: book
+    })
+        .then (()=>page('/'))
+        .catch(errorCallback);
     module.Book = Book
 })(app);

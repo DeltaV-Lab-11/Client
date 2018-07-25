@@ -23,7 +23,7 @@ var app=app||{};
     app.showOnly(".form-view");
   }
 
-  $("form").on("submit",function(event){
+  $("add-form").on("submit",function(event){
     event.preventDefault();
 
     let book={
@@ -34,6 +34,26 @@ var app=app||{};
     };
     
     app.Book.createBook(book);
+  })
+
+  bookView.initUpdatePage=function(book){
+    app.showOnly(".update-view");
+
+    $('#update-form').find('[name="bookId"]').val(book.bookId);
+  }
+
+  $("#update-form").on("submit",function(event){
+    event.preventDefault();
+
+    let book={
+      bookId: parseInt(this.bookId.value),
+      title: this.title.value,
+      author: this.author.value,
+      image_url: this.image_url.value,
+      description: this.description.value
+    };
+    
+    app.Book.updateBook(book);
   })
 
   module.bookView = bookView;
