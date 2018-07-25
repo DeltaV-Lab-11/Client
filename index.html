@@ -7,11 +7,13 @@
     <title>HelloWorldBooks</title>
     <link rel="stylesheet" href="/styles/base.css">
     <script id='bookTemplate' type="text/x-handlebars-template">
-      <h1><a href="/books/{{bookId}}">{{title}}</a></h1>
-      <h3>{{author}}</h3>
-      <h4>{{isbn}}</h4>
-      <img src='{{image_url}}'>
-      <p>{{description}}</p>
+        <h1><a href="/books/{{bookId}}">{{title}}</a></h1>
+        <h3>{{author}}</h3>
+        <h4>{{isbn}}</h4>
+        <img src='{{image_url}}'>
+        <p>{{description}}</p>
+        <a href='/books/{{bookId}}/update'>Update</a>
+        <a href='/books/{{bookId}}/delete'>Delete</a>
     </script>
     <script id="error-template" type="text/x-handlebars-template">
         <p>{{status}}: {{statusText}}</p>
@@ -45,13 +47,25 @@
         </div>
         <div class="detail-view">
             <section id='detail'><h1>Detail</h1></section>
+            
         </div>
         <div class="error-view">
             <section id ='error-message' class="error-view"></section>
         </div>
-        <div id='form' class="form-view">
+        <div class="form-view">
             <h1>Create a book!</h1>
             <form id="add-form"> 
+               <label for="">Title:<input type="text" required name="title"></label>
+               <label for="">Author:<input type="text" required name="author"></label>
+               <label for="">Image Url:<input type="text" required name="image_url"></label>
+               <label for="">Book Description:<textarea name="description" cols="50" rows="10"></textarea></label>
+                <button type="submit">Create Book</button>
+            </form>
+        </div>
+        <div class="update-view">
+            <h1>Update your book?</h1>
+            <form id="update-form"> 
+                <input type="hidden" name="bookId">
                <label for="">Title:<input type="text" required name="title"></label>
                <label for="">Author:<input type="text" required name="author"></label>
                <label for="">Image Url:<input type="text" required name="image_url"></label>
