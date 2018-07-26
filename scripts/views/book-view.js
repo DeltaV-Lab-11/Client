@@ -16,14 +16,14 @@ var app=app||{};
   bookView.initDetailPage = function(book){
     app.showOnly('.detail-view');
     console.log(book);
-    $('#detail').empty().append(book.toHtml());
+    $('#detail').empty().append(app.render('bookTemplate' , book));
   };
 
-  bookView.initAddForm=function(){
+  bookView.initAddForm= ()=>{
     app.showOnly(".form-view");
   }
 
-  $("add-form").on("submit",function(event){
+  $("#add-form").on("submit",function(event){
     event.preventDefault();
 
     let book={
@@ -39,7 +39,11 @@ var app=app||{};
   bookView.initUpdatePage=function(book){
     app.showOnly(".update-view");
 
-    $('#update-form').find('[name="bookId"]').val(book.bookId);
+    let $form = $('#update-form');
+    Object.keys(book).forEach(key =>{
+      $form.find(`[name = "${key}"]`).val(book[key]);
+    })
+   
   }
 
   $("#update-form").on("submit",function(event){
@@ -55,6 +59,21 @@ var app=app||{};
     
     app.Book.updateBook(book);
   })
+
+
+ bookView.initDeletePage = function(book){
+   app.showOnly(".delete-view");
+   $('#delete-form').find('[name="bookId"]').val(book.bookId);
+   $('#delete-form').find('[name="confirm"]').prop("checked" , false);
+  }
+
+  $("#delete-form").on('submit', function(event) {
+    event.preventDefault();
+    let bookId = parseInt(this.bookId.value);
+    app.Book.deleteOne(bookId);
+  });
+
+
 
   module.bookView = bookView;
 })(app);
