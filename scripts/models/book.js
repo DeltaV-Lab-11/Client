@@ -12,7 +12,7 @@ var app = app || {};
       });
     }
     Book.prototype.toHtml = function() {
-        return app.render('bookTemplate', this);
+        return app.render('main-template', this);
     }
 
     Book.all = [];
@@ -27,6 +27,16 @@ var app = app || {};
             .then(bookData => {console.log(callback);
                 callback(new Book(bookData))})
             .catch(errorCallback);
+    }
+
+    Book.deleteOne = (bookId) => {
+        $.ajax({
+            method:'delete',
+            url: `${app.ENV.apiUrl}/api/v1/books/${bookId}`,
+            data: bookId
+        })
+        .then(()=> page('/'))
+        .catch(errorCallback);
     }
 
     Book.fetchAll = (callback,errorCallback) => {

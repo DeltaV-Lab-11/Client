@@ -12,8 +12,8 @@ var app = app || {};
     module.ENV.apiUrl = module.ENV.isProduction ? module.ENV.productionApiUrl: module.ENV.devApiUrl
 
     module.showOnly = function(selected) {
-        $("main > div").hide()
-        $(selected).show()
+        $("main > div").hide();
+        $(selected).show();
     }
     let templateCache = {};
     module.render = function(templateId, dataToRender) {

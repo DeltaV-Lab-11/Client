@@ -7,7 +7,7 @@
     <title>HelloWorldBooks</title>
     <link rel="stylesheet" href="/styles/base.css">
     <script id='bookTemplate' type="text/x-handlebars-template">
-        <h1><a href="/books/{{bookId}}">{{title}}</a></h1>
+        <h1>{{title}}</h1>
         <h3>{{author}}</h3>
         <h4>{{isbn}}</h4>
         <img src='{{image_url}}'>
@@ -18,10 +18,11 @@
     <script id="error-template" type="text/x-handlebars-template">
         <p>{{status}}: {{statusText}}</p>
     </script>
-    <script id="detail-template" type="text/x-handlebars-template">
+    <script id="main-template" type="text/x-handlebars-template">
         <div>
-            <h1>{{title}}</h1>
-            <p>{{description}}</p>
+            <h1><a href="/books/{{bookId}}">{{title}}</a></h1>
+            <p>{{author}}</p>
+            <img src='{{image_url}}'>
         </div>
     </script>
 </head>
@@ -32,7 +33,7 @@
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/new">New Book</a></li>
+                <li><a href="/books/new">New Book</a></li>
             </ul>
         </nav>
     </header>
@@ -49,8 +50,15 @@
             <section id='detail'><h1>Detail</h1></section>
             
         </div>
+        <div class="delete-view">
+            <form id='delete-form'>
+                <input type="hidden" name="bookId">
+                <label><input type="checkbox" name="confirm" required>Do you want to delete?</label>
+                <button type="submit">Delete Book?</button>
+            </form>
+        </div>
         <div class="error-view">
-            <section id ='error-message' class="error-view"></section>
+            <section id ="error-message" class="error-view"></section>
         </div>
         <div class="form-view">
             <h1>Create a book!</h1>

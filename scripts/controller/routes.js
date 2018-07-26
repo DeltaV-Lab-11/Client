@@ -9,4 +9,8 @@ page('/books/:id/update', ctx=> {
     app.Book.fetchOne(ctx.params.id, app.bookView.initUpdatePage);
 });
 
+page('/books/:id/delete', ctx =>{
+    console.log("page.js was clicked");
+    app.Book.fetchOne(ctx.params.id, app.bookView.initDeletePage);
+});
 page();
