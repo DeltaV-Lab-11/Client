@@ -14,7 +14,7 @@
 header{
   background-color:#B7D3F2;
 }
-main{
+body{
   background-color:rgb(241, 241, 241);
 }
 header h1,header h3{
@@ -27,7 +27,8 @@ section{
 }
 footer{
   background-color:#B7D3F2;
-  height:30px;
+  height:50px;
+  width: 100%;
   clear: both;
   overflow: hidden;
 }
