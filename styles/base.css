@@ -32,3 +32,25 @@ footer{
   background-color:#B7D3F2;
   height:30px;
 }
+/*  Mainpage book samples  */
+.book-sample{
+  border:3px solid #222;
+  border-radius: 20%;
+  box-sizing: border-box;
+  height:175px;
+  margin:10px 0px;
+  overflow:hidden;
+  position: relative;
+}
+.book-sample img{
+  width:100%
+}
+.book-sample div{
+  background-color:#4C525A;
+  border-top:2px solid #222;
+  bottom:0;
+  box-sizing:border-box;
+  position: absolute;
+  text-align: center;
+  width:100%;
+}
