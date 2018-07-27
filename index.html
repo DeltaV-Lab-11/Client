@@ -23,10 +23,12 @@
         <p>{{status}}: {{statusText}}</p>
     </script>
     <script id="main-template" type="text/x-handlebars-template">
+        <div class="book-sample">
+            <img src='{{image_url}}'>
         <div>
             <h1><a href="/books/{{bookId}}">{{title}}</a></h1>
             <p>{{author}}</p>
-            <img src='{{image_url}}'>
+        </div>
         </div>
     </script>
 </head>
