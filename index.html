@@ -7,13 +7,17 @@
     <title>HelloWorldBooks</title>
     <link rel="stylesheet" href="/styles/base.css">
     <script id='bookTemplate' type="text/x-handlebars-template">
+        <div>
+            <hgroup>
         <h1>{{title}}</h1>
         <h3>{{author}}</h3>
-        <h4>{{isbn}}</h4>
+            </hgroup>
+            <p>{{isbn}}</p>
         <img src='{{image_url}}'>
         <p>{{description}}</p>
         <a href='/books/{{bookId}}/update'>Update</a>
         <a href='/books/{{bookId}}/delete'>Delete</a>
+        </div>
     </script>
     <script id="error-template" type="text/x-handlebars-template">
         <p>{{status}}: {{statusText}}</p>
