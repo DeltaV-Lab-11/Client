@@ -9,14 +9,14 @@
     <script id='bookTemplate' type="text/x-handlebars-template">
         <div>
             <hgroup>
-        <h1>{{title}}</h1>
-        <h3>{{author}}</h3>
+                    <h1>{{title}}</h1>
+                    <h3>{{author}}</h3>
             </hgroup>
             <p>{{isbn}}</p>
-        <img src='{{image_url}}'>
-        <p>{{description}}</p>
-        <a href='/books/{{bookId}}/update'>Update</a>
-        <a href='/books/{{bookId}}/delete'>Delete</a>
+            <img src='{{image_url}}'>
+            <p>{{description}}</p>
+            <a href='/books/{{bookId}}/update'>Update</a>
+            <a href='/books/{{bookId}}/delete'>Delete</a>
         </div>
     </script>
     <script id="error-template" type="text/x-handlebars-template">
@@ -25,10 +25,10 @@
     <script id="main-template" type="text/x-handlebars-template">
         <div class="book-sample">
             <img src='{{image_url}}'>
-        <div>
-            <h1><a href="/books/{{bookId}}">{{title}}</a></h1>
-            <p>{{author}}</p>
-        </div>
+            <div>
+                <h1><a href="/books/{{bookId}}">{{title}}</a></h1>
+                <p>{{author}}</p>
+            </div>
         </div>
     </script>
 </head>
@@ -49,22 +49,10 @@
             <section id='bookList'></section>
             <section id='bookCount'><h1>Book Count</h1></section>
         </div>
-        <div class="about-view">
-            <section id='about'><h1>About Us</h1></section>
-        </div>
-        <div class="detail-view">
-            <section id='detail'><h1>Detail</h1></section>
-            
-        </div>
-        <div class="delete-view">
-            <form id='delete-form'>
-                <input type="hidden" name="bookId">
-                <label><input type="checkbox" name="confirm" required>Do you want to delete?</label>
-                <button type="submit">Delete Book?</button>
-            </form>
-        </div>
         <div class="error-view">
             <section id ="error-message" class="error-view"></section>
+        </div>
+        <div id='detail' class="detail-view">
         </div>
         <div class="form-view">
             <h1>Create a book!</h1>
@@ -87,7 +75,15 @@
                 <button type="submit">Create Book</button>
             </form>
         </div>
+        <div class="delete-view">
+            <form id='delete-form'>
+                <input type="hidden" name="bookId">
+                <label><input type="checkbox" name="confirm" required>Do you want to delete?</label>
+                <button type="submit">Delete Book?</button>
+            </form>
+        </div>
     </main>
+    <footer></footer>
     <script src="/scripts/vendor/handlebars-v4.0.11.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="/scripts/vendor/jquery-3.3.1.min.js"></script>
