@@ -1,9 +1,21 @@
 /*TODO Sort this out SMACSS*/
+
+/*
+#B7D3F2 aqua
+#4C525A grey
+#333 black
+#D9D0DE light pink
+#ECECEC off ivory
+*/
+
 *{
   margin:0;
 }
 header{
-  background-color:cadetblue;
+  background-color:#B7D3F2;
+}
+main{
+  background-color:rgb(241, 241, 241);
 }
 header h1,header h3{
   text-align: center;
@@ -12,4 +24,45 @@ section{
   box-sizing:border-box;
   width:80%;
   margin:0 auto;
+}
+footer{
+  background-color:#B7D3F2;
+  height:30px;
+}
+/*  Mainpage book samples  */
+.book-sample{
+  border:3px solid #222;
+  border-radius: 20%;
+  box-sizing: border-box;
+  height:175px;
+  margin:10px 0px;
+  overflow:hidden;
+  position: relative;
+}
+.book-sample img{
+  width:100%
+}
+.book-sample div{
+  background-color:#4C525A;
+  border-top:2px solid #222;
+  bottom:0;
+  box-sizing:border-box;
+  position: absolute;
+  text-align: center;
+  width:100%;
+}
+/*    detail page styles   */
+.detail-view div{
+  width:80%;
+  margin:0 auto;
+}
+.detail-view img{
+  width:90%;
+  margin:5px 5%;
+}
+.detail-view hgroup{
+  float:left;
+}
+.detail-view p{
+  float:right;
 }
