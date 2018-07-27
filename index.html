@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HelloWorldBooks</title>
     <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/module.css">
     <script id='bookTemplate' type="text/x-handlebars-template">
         <div>
             <hgroup>
@@ -55,24 +56,24 @@
         <div id='detail' class="detail-view">
         </div>
         <div class="form-view">
-            <h1>Create a book!</h1>
+            <h1>Add a New Book</h1>
             <form id="add-form"> 
-               <label for="">Title:<input type="text" required name="title"></label>
-               <label for="">Author:<input type="text" required name="author"></label>
-               <label for="">Image Url:<input type="text" required name="image_url"></label>
-               <label for="">Book Description:<textarea name="description" cols="50" rows="10"></textarea></label>
-                <button type="submit">Create Book</button>
+                <label for="">Title:<input type="text" required name="title"></label>
+                <label for="">Author:<input type="text" required name="author"></label>
+                <label for="">Image Url:<input type="text" required name="image_url"></label>
+                <label for="">Book Description:<textarea name="description" cols="40" rows="5"></textarea></label>
+                <div class="button"><button type="submit">Create Book</button></div>
             </form>
         </div>
         <div class="update-view">
-            <h1>Update your book?</h1>
-            <form id="update-form"> 
+            <h1>Update Book</h1>
+                <form id="update-form"> 
                 <input type="hidden" name="bookId">
-               <label for="">Title:<input type="text" required name="title"></label>
-               <label for="">Author:<input type="text" required name="author"></label>
-               <label for="">Image Url:<input type="text" required name="image_url"></label>
-               <label for="">Book Description:<textarea name="description" cols="50" rows="10"></textarea></label>
-                <button type="submit">Create Book</button>
+                <label for="">Title:<input type="text" required name="title"></label>
+                <label for="">Author:<input type="text" required name="author"></label>
+                <label for="">Image Url:<input type="text" required name="image_url"></label>
+                <label for="">Book Description:<textarea name="description" cols="40" rows="5"></textarea></label>
+                <div class="button"><button type="submit">Update Book</button></div>
             </form>
         </div>
         <div class="delete-view">
