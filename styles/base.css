@@ -12,7 +12,10 @@
   margin:0;
 }
 header{
-  background-color:cadetblue;
+  background-color:#B7D3F2;
+}
+main{
+  background-color:rgb(241, 241, 241);
 }
 header h1,header h3{
   text-align: center;
@@ -21,4 +24,11 @@ section{
   box-sizing:border-box;
   width:80%;
   margin:0 auto;
+} box-sizing:border-box;
+  width:80%;
+  margin:0 auto;
+}
+footer{
+  background-color:#B7D3F2;
+  height:30px;
 }
