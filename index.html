@@ -58,10 +58,10 @@
         <div class="form-view">
             <h1>Add a New Book</h1>
             <form id="add-form"> 
-                <label for="">Title:<input type="text" required name="title"></label>
-                <label for="">Author:<input type="text" required name="author"></label>
-                <label for="">Image Url:<input type="text" required name="image_url"></label>
-                <label for="">Book Description:<textarea name="description" cols="40" rows="5"></textarea></label>
+                <input type="text" required name="title" placeholder="Title">
+                <input type="text" required name="author" placeholder="Author">
+                <input type="text" required name="image_url" placeholder="Image Url">
+                <textarea name="description" cols="40" rows="5" placeholder="Description..."></textarea>
                 <div class="button"><button type="submit">Create Book</button></div>
             </form>
         </div>
@@ -69,10 +69,10 @@
             <h1>Update Book</h1>
                 <form id="update-form"> 
                 <input type="hidden" name="bookId">
-                <label for="">Title:<input type="text" required name="title"></label>
-                <label for="">Author:<input type="text" required name="author"></label>
-                <label for="">Image Url:<input type="text" required name="image_url"></label>
-                <label for="">Book Description:<textarea name="description" cols="40" rows="5"></textarea></label>
+                <input type="text" required name="title">
+                <input type="text" required name="author">
+                <input type="text" required name="image_url">
+                <textarea name="description" cols="40" rows="5"></textarea>
                 <div class="button"><button type="submit">Update Book</button></div>
             </form>
         </div>

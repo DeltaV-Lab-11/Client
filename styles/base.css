@@ -28,6 +28,8 @@ section{
 footer{
   background-color:#B7D3F2;
   height:30px;
+  clear: both;
+  overflow: hidden;
 }
 /*  Mainpage book samples  */
 .book-sample{
